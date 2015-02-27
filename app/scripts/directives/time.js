@@ -12,8 +12,10 @@ angular.module('gurjitChatAppApp')
       template: '<div></div>',
       restrict: 'A',
       link: function postLink(scope, element, attrs) {
-        scope.timeText = attrs.messageTime;
-        element.text(scope.timeText.toString());
+        scope.timeText = timeSince(attrs.messageTime);
+
+        
+        element.text(scope.timeText);
 
         function timeSince(date) {
 
