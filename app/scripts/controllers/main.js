@@ -11,20 +11,23 @@ angular.module('gurjitChatAppApp')
   .controller('MainCtrl', function ($scope, chatserver) {
     $scope.data = chatserver.data;
 
-    $scope.messageObj = {
-    	name: 'jeremy',
-    	message: ''
-    }
+    
 
     $scope.clearMessage = function(){
     	$scope.messageObj = {
 	    	name: 'jeremy',
-	    	message: ''
+	    	message: '',
+            time: null
 	}
     }
 
     $scope.sendMessage = function(){
+        var time = new Date;
+        $scope.messageObj.time = time.getTime();
+
     	$scope.data.$add($scope.messageObj);
-    	// $scope.clearMessage();
+    	 $scope.clearMessage();
+
     }
+    $scope.clearMessage();
   });
