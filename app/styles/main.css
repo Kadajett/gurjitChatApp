@@ -33,6 +33,10 @@
 {
     margin-right: 5px;
 }
+.img-circle{
+    height: 33px;
+    width: 33px;
+}
 
 .panel-body
 {
